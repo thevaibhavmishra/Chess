@@ -7,7 +7,7 @@ player_1 = False
 pygame.init
 screen=pygame.display.set_mode((x*8,x*8))
 pygame.display.set_caption("The Incredible chess")
-icon=pygame.image.load("chess.png")
+icon=pygame.image.load("requirements/chess.png")
 pygame.display.set_icon(icon)
 
 b_piece = {}
