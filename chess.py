@@ -11,31 +11,31 @@ icon=pygame.image.load("requirements/chess.png")
 pygame.display.set_icon(icon)
 
 b_piece = {}
-b_piece["king"] = pygame.image.load("king.png")
+b_piece["king"] = pygame.image.load("requirements/king.png")
 b_piece["king"] = pygame.transform.scale(b_piece["king"],(60,60))
-b_piece["queen"] = pygame.image.load("queen.png")
+b_piece["queen"] = pygame.image.load("requirements/queen.png")
 b_piece["queen"] = pygame.transform.scale(b_piece["queen"],(60,60))
-b_piece["bishop"] = pygame.image.load("bishop.png")
+b_piece["bishop"] = pygame.image.load("requirements/bishop.png")
 b_piece["bishop"] = pygame.transform.scale(b_piece["bishop"],(60,60))
-b_piece["knight"] = pygame.image.load("knight.png")
+b_piece["knight"] = pygame.image.load("requirements/knight.png")
 b_piece["knight"] = pygame.transform.scale(b_piece["knight"],(60,60))
-b_piece["rook"] = pygame.image.load("rook.png")
+b_piece["rook"] = pygame.image.load("requirements/rook.png")
 b_piece["rook"] = pygame.transform.scale(b_piece["rook"],(60,60))
-b_piece["pawn"] = pygame.image.load("pawn.png")
+b_piece["pawn"] = pygame.image.load("requirements/pawn.png")
 b_piece["pawn"] = pygame.transform.scale(b_piece["pawn"],(50,50))
 
 w_piece = {}
-w_piece["king"] = pygame.image.load("king1.png")
+w_piece["king"] = pygame.image.load("requirements/king1.png")
 w_piece["king"] = pygame.transform.scale(w_piece["king"],(60,60))
-w_piece["queen"] = pygame.image.load("queen1.png")
+w_piece["queen"] = pygame.image.load("requirements/queen1.png")
 w_piece["queen"] = pygame.transform.scale(w_piece["queen"],(60,60))
-w_piece["bishop"] = pygame.image.load("bishop1.png")
+w_piece["bishop"] = pygame.image.load("requirements/bishop1.png")
 w_piece["bishop"] = pygame.transform.scale(w_piece["bishop"],(60,60))
-w_piece["knight"] = pygame.image.load("knight1.png")
+w_piece["knight"] = pygame.image.load("requirements/knight1.png")
 w_piece["knight"] = pygame.transform.scale(w_piece["knight"],(60,60))
-w_piece["rook"] = pygame.image.load("rook1.png")
+w_piece["rook"] = pygame.image.load("requirements/rook1.png")
 w_piece["rook"] = pygame.transform.scale(w_piece["rook"],(60,60))
-w_piece["pawn"] = pygame.image.load("pawn1.png")
+w_piece["pawn"] = pygame.image.load("requirements/pawn1.png")
 w_piece["pawn"] = pygame.transform.scale(w_piece["pawn"],(50,50))
 
 piece = b_piece
@@ -47,7 +47,7 @@ for i in range(64):
 class king:
     count = 0
     def __init__(self):
-        #global player_1
+        global player_1
         if king.count == 2:
             return
         elif king.count == 1:
@@ -365,8 +365,8 @@ class chess:
     def __init__(self,black):
         self.p1=[]
         global player_1,b_piece,w_piece
-        player_1 = black
-        if not black :
+        #player_1 = black
+        if not player_1 :
             b_piece,w_piece = w_piece,b_piece
 
         self.p1.append(rook())
@@ -412,6 +412,7 @@ class chess:
 
 black = (50,50,50)
 white = (255,255,255)
+
 box=white
 
 def change(box):
